@@ -1,0 +1,57 @@
+.header span {
+  display: block;
+  width: 35px;
+  height: 4px;
+  background-color: #000000;
+  margin: 7px 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 5px;
+}
+.header button {
+  margin-top: 14px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  z-index: 9;
+}
+.header button.active {
+  position: fixed;
+  right: 0;
+}
+.header .s-2 {
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  margin-left: -5px;
+}
+.header button.active span {
+  background-color: #ffffff;
+}
+.header button.active .s-1 {
+  -webkit-transform: rotate(45deg) translateY(16px);
+  transform: rotate(45deg) translateY(16px);
+}
+.header button.active .s-2 {
+  -webkit-transform: translateX(100px);
+  transform: translateX(100px);
+}
+.header button.active .s-3 {
+  -webkit-transform: rotate(-45deg) translateY(-16px);
+  transform: rotate(-45deg) translateY(-16px);
+}
+.header .overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(83, 119, 128, 0.95);
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.header .overlay.active {
+  width: 100%;
+}

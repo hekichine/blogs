@@ -1,39 +1,52 @@
-import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "./header.css";
 
 const Header = () => {
-  const [active, setActive] = useState(false);
-  const menuBar = () => {
-    setActive(!active);
-  };
   return (
     <>
-      <div className="header d-flex justify-content-between">
-        <div className="logo">STACKY</div>
-        <div className="header-btn_group">
-          <div className="search">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              viewBox="0 0 16 16"
-            >
-              <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
-              <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
-            </svg>
-          </div>
+      <nav className="navbar navbar-expand-lg">
+        <div className="container">
+          <a className="navbar-brand" href="#">
+            <img
+              src="/logo.png"
+              width={"30px"}
+              height={"30px"}
+              alt=""
+              className="me-2"
+            />
+            <span>Blogger</span>
+          </a>
           <button
-            className={active ? "menu_bar active" : "menu_bar"}
-            onClick={() => menuBar()}
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            <span className="s-1"> </span>
-            <span className="s-2"> </span>
-            <span className="s-3"> </span>
+            <span className="navbar-toggler-icon"></span>
           </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <NavLink
+                  to={"/"}
+                  className="nav-link active"
+                  aria-current="page"
+                >
+                  HOME
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to={"/categories"} className="nav-link">
+                  CATEGORIES
+                </NavLink>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className={active ? "overlay active" : "overlay"}></div>
-      </div>
+      </nav>
     </>
   );
 };

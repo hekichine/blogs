@@ -1,4 +1,5 @@
 import "./App.css";
+import Footer from "./commons/footer/Footer";
 import Header from "./commons/haeder/Header";
 import { Outlet } from "react-router-dom";
 
@@ -13,7 +14,7 @@ function App() {
           <Outlet />
         </main>
         <footer className="footer">
-          <div>footerasds</div>
+          <Footer />
         </footer>
       </div>
     </>

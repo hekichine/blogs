@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -26,7 +27,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Albert Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1.2;
   font-weight: 400;
   font-size: 14px;
@@ -38,30 +39,34 @@ body {
   place-items: center;
   min-height: 100vh;
 }
-
+p {
+  margin-bottom: 0;
+}
 a {
-  font-weight: 500;
+  font-weight: 600;
   color: var(--link-color);
   text-decoration: none;
   transition: 0.25s ease-in-out;
 }
-a:hover {
+a:not(.disable-hover):hover {
   color: var(--link-hover-color);
 }
 :where(h1, h2, h3, h4, h5, h6, .sta-heading) {
   font-weight: 500;
   color: var(--text-color);
-  cursor: pointer;
   transition: 0.25s ease-in;
 }
 
-:where(button, .sta-btn) {
+.sta-btn {
   outline: none;
   padding: 15px 25px;
   transition: 0.25s ease-in-out;
   background-color: var(--btn-color);
   color: var(--btn-color2);
   cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 .sta-btn_solid {
   border: none;
@@ -83,17 +88,17 @@ a:hover {
 }
 
 /* hover */
-:where(h1, h2, h3, h4, h5, h6, .sta-heading):hover {
+/* :where(h1, h2, h3, h4, h5, h6, .sta-heading):hover {
   color: var(--text-hover-color);
-}
-.sta-btn_solid:hover {
+} */
+.sta-btn_solid:not(.disable-hover):hover {
   background-color: var(--btn-hover-color2);
   color: var(--btn-color);
 }
-.sta-btn_outline:hover {
+.sta-btn_outline:not(.disable-hover):hover {
   background-color: var(--btn-border-color);
   color: var(--btn-color2);
 }
-.sta-btn_link:hover {
+.sta-btn_link:not(.disable-hover):hover {
   color: var(--link-hover-color);
 }

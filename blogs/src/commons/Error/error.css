@@ -1,0 +1,8 @@
+.error-page {
+  flex-direction: column;
+  gap: 30px;
+  height: 100vh;
+}
+.error-page .under-line {
+  text-decoration: underline;
+}

@@ -12,13 +12,62 @@ html,
   display: flex;
   flex-direction: column;
 }
-header {
-  height: 100px;
-}
+
 footer {
   height: 50px;
+  background-color: #fff;
 }
 main {
   flex: auto;
-  background-color: #eee;
+}
+.parallax {
+  /* Set a specific height */
+  min-height: 500px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.heading {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.subheading {
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.tophead {
+  margin-bottom: 30px;
+}
+.p-15 {
+  padding: 0 15px;
+}
+.full-width-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+}
+@media (min-width: 768px) {
+  .heading {
+    font-size: 30px;
+  }
+  .parallax {
+    min-height: 650px;
+  }
+}
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 36px;
+  }
+  .parallax {
+    min-height: 850px;
+  }
 }

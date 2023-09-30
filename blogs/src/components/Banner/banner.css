@@ -1,5 +1,4 @@
 .banner .banner-parallax {
-  background-image: url("/images/parallax.webp");
   position: relative;
 }
 .banner .banner-parallax::before {

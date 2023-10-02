@@ -1,13 +1,16 @@
+import { useLoaderData } from "react-router-dom";
+import topicsApi from "../../api/topicsApi";
 import Banner from "../../components/Banner/Banner";
 import Categories from "../../components/Category/Categories";
 import Topics from "../../components/Topics/Topics";
 
 const Homepage = () => {
+  const topics = useLoaderData();
   return (
     <>
       <Banner />
       <Categories />
-      <Topics />
+      <Topics topics={topics} />
     </>
   );
 };
@@ -21,19 +24,6 @@ const Homepage = () => {
 
 export default Homepage;
 
-export const homeLoader = () => {
-  return {
-    cate: {
-      id: 1,
-      name: "cate 1",
-    },
-    banner: {
-      id: 1,
-      url: "banner",
-    },
-    topics: {
-      id: 123,
-      name: "asldjsal",
-    },
-  };
+export const homeLoader = async () => {
+  return await topicsApi.getTopics("");
 };

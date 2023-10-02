@@ -21,6 +21,7 @@ const ImgResponsive = ({
         className={className}
         width={width}
         height={height}
+        loading="lazy"
       />
     </>
   );
